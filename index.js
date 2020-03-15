@@ -23,11 +23,21 @@ const URL = 'https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0';
   // console.log(response)
   let $ = cheerio.load(response)
   // queremos el div con la class title_wrape y selecionamos el h1 y lo queremos en txt
-  let title = $('div[class="title_wrapper"] > h1').text()
+  let title = $('div[class="title_wrapper"] > h1').text().trim() // trim quita el espacio despues
   // let rating = $('span[itemprop="ratingValue"]').text() // nacho way
   let rating = $('div[class="ratingValue"] > strong >  span').text();
+  let poster = $('div[class="poster"] > a > img').attr('src');
+  let totalRating = $('div[class="imdbRating"] > a > span').text();
+  let estreno = $('a[title="See more release dates"]').text().trim();
 
   let director = $('div[class="credit_summary_item"] > a').text()
-  console.log(title, rating)
-  console.log(director)
+
+  console.log(`Title: ${title}`);
+  console.log(`Rating: ${rating}`);
+  console.log(`Poster: ${poster}`);
+  console.log(`TotalRating: ${totalRating}`);
+  console.log(`Estreno: ${estreno}`);
+  console.log(`Director: ${director}`);
+
+
 })()
