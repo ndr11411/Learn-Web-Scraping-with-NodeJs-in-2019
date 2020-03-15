@@ -30,14 +30,25 @@ const URL = 'https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0';
   let totalRating = $('div[class="imdbRating"] > a > span').text();
   let estreno = $('a[title="See more release dates"]').text().trim();
 
-  let director = $('div[class="credit_summary_item"] > a').text()
+  let generos = [];
+  $(`div[class="title_wrapper"] a[href^="/search/"]`).each((i, elm) => {
+     let genre = $(elm).text();
+     generos.push(genre);
+  });
+
+  let directores = [];
+  $(`div[class="credit_summary_item"] a[href^="/name/"]`).each((i, elm) => {
+     let genre = $(elm).text();
+     directores.push(genre);
+  });
 
   console.log(`Title: ${title}`);
   console.log(`Rating: ${rating}`);
   console.log(`Poster: ${poster}`);
   console.log(`TotalRating: ${totalRating}`);
   console.log(`Estreno: ${estreno}`);
-  console.log(`Director: ${director}`);
+  console.log(`Generos: ${generos}`);
+  console.log(`Directores: ${directores}`);
 
 
 })()
