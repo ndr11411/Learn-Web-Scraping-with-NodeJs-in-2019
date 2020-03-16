@@ -1,13 +1,16 @@
 const request = require('request-promise')
 const cheerio = require('cheerio')
+const fs = require('fs')
 
 const URLS =[
 'https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0',
-'https://www.imdb.com/title/tt0848228/?ref_=tt_sims_tt'
+'https://www.imdb.com/title/tt0848228/?ref_=tt_sims_tt',
+'https://www.imdb.com/title/tt2395427/?ref_=tt_sims_tt'
 ];
 
 (async () => {
-  
+  let moviesDate = [];
+
   for(let movie of URLS) {
   const response = await request({
     uri: movie,
@@ -48,13 +51,26 @@ const URLS =[
      directores.push(genre);
   });
 
-  console.log(`Title: ${title}`);
-  console.log(`Rating: ${rating}`);
-  console.log(`Poster: ${poster}`);
-  console.log(`TotalRating: ${totalRating}`);
-  console.log(`Estreno: ${estreno}`);
-  console.log(`Generos: ${generos}`);
-  console.log(`Directores: ${directores}`);
+moviesDate.push({
+  title,
+  rating,
+  poster,
+  totalRating,
+  estreno,
+  generos,
+  directores
+})
+  // console.log(`Title: ${title}`);
+  // console.log(`Rating: ${rating}`);
+  // console.log(`Poster: ${poster}`);
+  // console.log(`TotalRating: ${totalRating}`);
+  // console.log(`Estreno: ${estreno}`);
+  // console.log(`Generos: ${generos}`);
+  // console.log(`Directores: ${directores}`);
 
   }
+  fs.writeFileSync('./data.json', JSON.stringify(moviesDate), 'utf-8');
+
+  console.log(moviesDate);
+//  debug ger;
 })()

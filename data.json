@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Vengadores: Endgame (2019)",
+    "rating": "8,4",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "totalRating": "679.213",
+    "estreno": "25 April 2019 (Spain)",
+    "generos": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "directores": [
+      "Anthony Russo",
+      "Joe Russo",
+      "Christopher Markus",
+      "Stephen McFeely",
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo"
+    ]
+  },
+  {
+    "title": "Los Vengadores (2012)",
+    "rating": "8,0",
+    "poster": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "totalRating": "1.220.537",
+    "estreno": "27 April 2012 (Spain)",
+    "generos": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "directores": [
+      "Joss Whedon",
+      "Joss Whedon",
+      "Zak Penn",
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Scarlett Johansson"
+    ]
+  },
+  {
+    "title": "Vengadores: La era de Ultrón (2015)",
+    "rating": "7,3",
+    "poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    "totalRating": "702.302",
+    "estreno": "29 April 2015 (Spain)",
+    "generos": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "directores": [
+      "Joss Whedon",
+      "Joss Whedon",
+      "Stan Lee",
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo"
+    ]
+  }
+]
