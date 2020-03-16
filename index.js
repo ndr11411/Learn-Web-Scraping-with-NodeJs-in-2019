@@ -1,5 +1,7 @@
 const request = require('request-promise')
 const cheerio = require('cheerio')
+const { Parser } = require('json2csv');
+
 const fs = require('fs')
 
 const URLS =[
@@ -69,8 +71,15 @@ moviesDate.push({
   // console.log(`Directores: ${directores}`);
 
   }
-  fs.writeFileSync('./data.json', JSON.stringify(moviesDate), 'utf-8');
 
-  console.log(moviesDate);
-//  debug ger;
+  // const fields = ['title', 'rating','poster','estreno','generos'];
+  const json2csvParser = new Parser(); // asi exporta toda la informacion de moviesDate
+  const csv = json2csvParser.parse(moviesDate);
+  
+
+  // fs.writeFileSync('./data.json', JSON.stringify(moviesDate), 'utf-8');
+  fs.writeFileSync('./data.csv', csv, 'utf-8');
+  console.log(csv);
+
+  //  debug ger;
 })()
