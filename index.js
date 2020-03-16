@@ -1,10 +1,16 @@
 const request = require('request-promise')
 const cheerio = require('cheerio')
 
-const URL = 'https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0';
+const URLS =[
+'https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0',
+'https://www.imdb.com/title/tt0848228/?ref_=tt_sims_tt'
+];
+
 (async () => {
+  
+  for(let movie of URLS) {
   const response = await request({
-    uri: URL,
+    uri: movie,
     headers: {
       'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
       'accept-encoding': 'gzip, deflate, br',
@@ -50,5 +56,5 @@ const URL = 'https://www.imdb.com/title/tt4154796/?ref_=nv_sr_srsg_0';
   console.log(`Generos: ${generos}`);
   console.log(`Directores: ${directores}`);
 
-
+  }
 })()
