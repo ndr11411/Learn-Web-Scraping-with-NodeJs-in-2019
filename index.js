@@ -40,6 +40,8 @@ const URLS =[
   let poster = $('div[class="poster"] > a > img').attr('src');
   let totalRating = $('div[class="imdbRating"] > a > span').text();
   let estreno = $('a[title="See more release dates"]').text().trim();
+  let popularity = $('#title-overview-widget > div.plot_summary_wrapper > div.titleReviewBar > div:nth-child(5) > div.titleReviewBarSubItem > div:nth-child(2) > span').text().trim()
+  let director = $('#title-overview-widget > div.plot_summary_wrapper > div.plot_summary > div:nth-child(2) > a').text();
 
   let generos = [];
   $(`div[class="title_wrapper"] a[href^="/search/"]`).each((i, elm) => {
@@ -47,11 +49,11 @@ const URLS =[
      generos.push(genre);
   });
 
-  let directores = [];
-  $(`div[class="credit_summary_item"] a[href^="/name/"]`).each((i, elm) => {
-     let genre = $(elm).text();
-     directores.push(genre);
-  });
+  // let directores = []; // cuando no sabia como selecionar uno solo
+  // $(`div[class="credit_summary_item"] a[href^="/name/"]`).each((i, elm) => {
+  //    let genre = $(elm).text();
+  //    directores.push(genre);
+  // });
 
 moviesDate.push({
   title,
@@ -60,7 +62,8 @@ moviesDate.push({
   totalRating,
   estreno,
   generos,
-  directores
+  director,
+  popularity
 })
   // console.log(`Title: ${title}`);
   // console.log(`Rating: ${rating}`);
@@ -77,7 +80,7 @@ moviesDate.push({
   const csv = json2csvParser.parse(moviesDate);
   
 
-  // fs.writeFileSync('./data.json', JSON.stringify(moviesDate), 'utf-8');
+  // fs.writeFileSync('./data2.json', JSON.stringify(moviesDate), 'utf-8');
   fs.writeFileSync('./data.csv', csv, 'utf-8');
   console.log(csv);
 
