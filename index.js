@@ -1,4 +1,5 @@
 const request = require('request-promise');
+request.debug=1; //da mas informacio del proceso o que salio mal
 
 (async () => {
   console.log('Iniciando request')
