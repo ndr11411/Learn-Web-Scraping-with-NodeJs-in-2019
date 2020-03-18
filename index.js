@@ -1,11 +1,7 @@
-//   proxy: 'http://user:password@ip:port'
-
-const request = require('request-promise').defaults({
-  proxy: 'http://user:password@ip:port'
-});
+const request = require('request-promise');
 
 (async () => {
-  let response = await request('https://httpbin.org/ip')
-  debugger
+  console.log('Iniciando request')
+  let status = await request('https://httpbin.org/status/200')
+  debugger // hay que escribit estus en la consola de depuracion
 })()
- 
